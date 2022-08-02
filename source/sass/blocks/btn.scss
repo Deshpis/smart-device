@@ -1,23 +1,25 @@
 .btn {
+  padding: 10px 15px;
   display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
-
+  justify-content: center;
   color: $color-default-white;
-
-  background-color: $color-neon-blue;
-  border: none;
+  background-color: $color-transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color-deep-sky-blue;
+  border-radius: 3px;
   cursor: pointer;
-
   transition: opacity $trans-default;
-
-  &--red {
-    background-color: $color-torch-red;
-  }
+  text-transform: uppercase;
+  font-family: $ff-roboto-condensed;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  user-select: none;
 
   &:disabled {
     opacity: 0.5;
-
     pointer-events: none;
   }
 

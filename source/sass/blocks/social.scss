@@ -1,0 +1,31 @@
+.social {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  max-width: 150px;
+  grid-template-columns: repeat(auto-fill, 40px);
+  gap: 15px;
+  list-style: none;
+}
+
+.social__link {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  transition: opacity $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}
+
+.social__icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}

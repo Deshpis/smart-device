@@ -1,0 +1,26 @@
+.callback {
+  padding-top: 37px;
+  top: 87px;
+  left: 49.5%;
+  transform: translate(-50%);
+  color: $color-default-white;
+  background-color: $color-deep-sky-blue;
+  border-radius: 3px;
+}
+
+.callback h2 {
+  margin: 0;
+  margin-bottom: 3px;
+  font-family: $ff-roboto-condensed;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.callback p {
+  margin: 0;
+  margin-bottom: 40px;
+  max-width: 380px;
+  font-size: 16px;
+  line-height: 22px;
+}

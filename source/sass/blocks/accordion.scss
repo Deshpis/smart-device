@@ -1,0 +1,39 @@
+@include vp-767 {
+  .accordion__header {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 1px;
+      top: 50%;
+      right: 25px;
+      background-color: $color-silver;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+      transition: transform 500ms;
+    }
+  }
+
+  .accordion__item--show .accordion__header,
+  .accordion__item--slidedown .accordion__header {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .accordion__item:not(.accordion__item--show) .accordion__body {
+    display: none;
+  }
+
+  .accordion--nojs .accordion__header {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}

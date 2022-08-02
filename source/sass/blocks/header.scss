@@ -1,0 +1,148 @@
+.header {
+  position: relative;
+  width: 100%;
+  color: $color-alice-blue;
+  background-color: $color-black-pearl;
+  z-index: 3;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(180deg, $color-black-pearl 10%, $color-transparent 90%);
+  }
+}
+
+.header--is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header__wrapper {
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (min-width: $vp-1920) {
+    padding-right: 60px;
+    padding-left: 0;
+  }
+
+  @include vp-1023 {
+    max-width: 770px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 70px;
+  }
+
+  @include vp-767 {
+    max-width: 320px;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 35px;
+    padding-bottom: 20px;
+  }
+}
+
+.header__logo {
+  margin-right: auto;
+
+  @media (min-width: $vp-1920) {
+    margin-right: 160px;
+  }
+
+  @include vp-767 {
+    margin-top: 5px;
+  }
+}
+
+.header a[href] {
+  color: $color-alice-blue;
+  transition: opacity $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}
+
+.header__contacts {
+  margin-right: auto;
+  padding: 14px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 420px;
+
+  @media (min-width: $vp-1920) {
+    width: 480px;
+  }
+
+  @include vp-1023 {
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    gap: 19px;
+  }
+}
+
+.header__contacts a {
+  white-space: nowrap;
+}
+
+.header__mail,
+.header__phone {
+  position: relative;
+  padding-left: 35px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include vp-1023 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @include vp-1023 {
+    font-size: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding-left: 40px;
+  }
+}
+
+.header__mail::before {
+  background-image: url("../img/svg/email.svg");
+}
+
+.header__phone::before {
+  background-image: url("../img/svg/phone.svg");
+}
+
+.header__callback {
+  margin-top: 5px;
+  border-color: $color-alice-blue;
+
+  @include vp-1023 {
+    display: none;
+  }
+}

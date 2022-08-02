@@ -34,8 +34,7 @@
 
     display: flex;
     flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     min-height: 100%;
     padding: 60px 40px;
@@ -59,7 +58,7 @@
   &__content {
     position: relative;
 
-    width: 600px;
+    width: 500px;
     padding: 40px;
 
     background-color: $color-default-white;
@@ -72,8 +71,8 @@
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: 11px;
+    right: 16px;
     z-index: 1;
 
     width: 40px;

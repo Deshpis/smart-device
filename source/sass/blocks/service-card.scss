@@ -1,0 +1,241 @@
+.service-card {
+  position: relative;
+  background-color: $color-venice-blue;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black-pearl, 0.5);
+    touch-action: none;
+    transition: background-color $trans-default;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    right: 0;
+    bottom: 0;
+    background-color: $color-deep-sky-blue;
+    background-image: url("../img/svg/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5px 10px;
+    border-radius: 3px 0 0 0;
+    pointer-events: none;
+    transition: opacity $trans-default;
+
+    @include vp-767 {
+      width: 40px;
+      height: 40px;
+      background-size: 5px 6px;
+    }
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover::before {
+      background-color: rgba($color-black-pearl, 0.3);
+    }
+
+    &:hover::after {
+      opacity: 0.7;
+    }
+  }
+}
+
+.service-card h3 {
+  margin: 0;
+  max-width: 170px;
+  font-family: $ff-roboto-condensed;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+
+  @include vp-1023 {
+    max-width: 150px;
+  }
+
+  @include vp-767 {
+    max-width: 135px;
+    font-size: 18px;
+  }
+}
+
+.service-card a {
+  position: absolute;
+  padding-top: 47px;
+  padding-right: 90px;
+  padding-bottom: 90px;
+  padding-left: 40px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: $color-default-white;
+
+  @include vp-1023 {
+    padding-top: 37px;
+    padding-left: 45px;
+  }
+
+  @include vp-767 {
+    padding-top: 26px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+  }
+}
+
+.service-card--production {
+  background-image: url("../img/decorative/article-1-bg-desktop.jpg");
+
+  @supports (background-image: url("../img/decorative/article-1-bg-desktop.webp")) {
+    background-image: url("../img/decorative/article-1-bg-desktop.webp");
+  }
+
+  @include retina {
+    background-image: url("../img/decorative/article-1-bg-desktop@2x.jpg");
+
+    @supports (background-image: url("../img/decorative/article-1-bg-desktop@2x.webp")) {
+      background-image: url("../img/decorative/article-1-bg-desktop@2x.webp");
+    }
+  }
+
+  @include vp-1023 {
+    background-image: url("../img/decorative/article-1-bg-tablet.jpg");
+
+    @supports (background-image: url("../img/decorative/article-1-bg-tablet.webp")) {
+      background-image: url("../img/decorative/article-1-bg-tablet.webp");
+    }
+
+    @include retina {
+      background-image: url("../img/decorative/article-1-bg-tablet@2x.jpg");
+
+      @supports (background-image: url("../img/decorative/article-1-bg-tablet@2x.webp")) {
+        background-image: url("../img/decorative/article-1-bg-tablet@2x.webp");
+      }
+    }
+  }
+
+  @include vp-767 {
+    background-image: url("../img/decorative/article-1-bg-mobile.jpg");
+
+    @supports (background-image: url("../img/decorative/article-1-bg-mobile.webp")) {
+      background-image: url("../img/decorative/article-1-bg-mobile.webp");
+    }
+
+    @include retina {
+      background-image: url("../img/decorative/article-1-bg-mobile@2x.jpg");
+
+      @supports (background-image: url("../img/decorative/article-1-bg-mobile@2x.webp")) {
+        background-image: url("../img/decorative/article-1-bg-mobile@2x.webp");
+      }
+    }
+  }
+}
+
+.service-card--montage {
+  background-image: url("../img/decorative/article-2-bg-desktop.jpg");
+
+  @supports (background-image: url("../img/decorative/article-2-bg-desktop.webp")) {
+    background-image: url("../img/decorative/article-2-bg-desktop.webp");
+  }
+
+  @include retina {
+    background-image: url("../img/decorative/article-2-bg-desktop@2x.jpg");
+
+    @supports (background-image: url("../img/decorative/article-2-bg-desktop@2x.webp")) {
+      background-image: url("../img/decorative/article-2-bg-desktop@2x.webp");
+    }
+  }
+
+  @include vp-1023 {
+    background-image: url("../img/decorative/article-2-bg-tablet.jpg");
+
+    @supports (background-image: url("../img/decorative/article-2-bg-tablet.webp")) {
+      background-image: url("../img/decorative/article-2-bg-tablet.webp");
+    }
+
+    @include retina {
+      background-image: url("../img/decorative/article-2-bg-tablet@2x.jpg");
+
+      @supports (background-image: url("../img/decorative/article-2-bg-tablet@2x.webp")) {
+        background-image: url("../img/decorative/article-2-bg-tablet@2x.webp");
+      }
+    }
+  }
+
+  @include vp-767 {
+    background-image: url("../img/decorative/article-2-bg-mobile.jpg");
+
+    @supports (background-image: url("../img/decorative/article-2-bg-mobile.webp")) {
+      background-image: url("../img/decorative/article-2-bg-mobile.webp");
+    }
+
+    @include retina {
+      background-image: url("../img/decorative/article-2-bg-mobile@2x.jpg");
+
+      @supports (background-image: url("../img/decorative/article-2-bg-mobile@2x.webp")) {
+        background-image: url("../img/decorative/article-2-bg-mobile@2x.webp");
+      }
+    }
+  }
+}
+
+.service-card--accessories {
+  background-image: url("../img/decorative/article-3-bg-desktop.jpg");
+
+  @supports (background-image: url("../img/decorative/article-3-bg-desktop.webp")) {
+    background-image: url("../img/decorative/article-3-bg-desktop.webp");
+  }
+
+  @include retina {
+    background-image: url("../img/decorative/article-3-bg-desktop@2x.jpg");
+
+    @supports (background-image: url("../img/decorative/article-3-bg-desktop@2x.webp")) {
+      background-image: url("../img/decorative/article-3-bg-desktop@2x.webp");
+    }
+  }
+
+  @include vp-1023 {
+    background-image: url("../img/decorative/article-3-bg-tablet.jpg");
+
+    @supports (background-image: url("../img/decorative/article-3-bg-tablet.webp")) {
+      background-image: url("../img/decorative/article-3-bg-tablet.webp");
+    }
+
+    @include retina {
+      background-image: url("../img/decorative/article-3-bg-tablet@2x.jpg");
+
+      @supports (background-image: url("../img/decorative/article-3-bg-tablet@2x.webp")) {
+        background-image: url("../img/decorative/article-3-bg-tablet@2x.webp");
+      }
+    }
+  }
+
+  @include vp-767 {
+    background-image: url("../img/decorative/article-3-bg-mobile.jpg");
+
+    @supports (background-image: url("../img/decorative/article-3-bg-mobile.webp")) {
+      background-image: url("../img/decorative/article-3-bg-mobile.webp");
+    }
+
+    @include retina {
+      background-image: url("../img/decorative/article-3-bg-mobile@2x.jpg");
+
+      @supports (background-image: url("../img/decorative/article-3-bg-mobile@2x.webp")) {
+        background-image: url("../img/decorative/article-3-bg-mobile@2x.webp");
+      }
+    }
+  }
+}
