@@ -14,19 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
-  // Фиксированная шапка
-  const header = document.querySelector('[data-element="header"]');
-
-  if (header) {
-    window.onscroll = function showHeader() {
-      if (window.pageYOffset) {
-        header.classList.add('header--is-fixed');
-      } else {
-        header.classList.remove('header--is-fixed');
-      }
-    };
-  }
-
   // Маска для телефона
   const inputPhone = document.querySelectorAll('[data-input="phone"]');
 
@@ -88,43 +75,48 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Сохранение формы в localstorage
+
   const feedbackForm = document.querySelector('[data-form="feedback"]');
-  const formFields = feedbackForm.elements;
-  const submitBtn = feedbackForm.querySelector('[data-input="submit"]');
 
-  submitBtn.addEventListener('click', clearStorage);
+  if (feedbackForm) {
+    const feedbackName = document.querySelectorAll('[data-input="name"]');
+    const feedbackPhone = document.querySelectorAll('[data-input="phone"]');
+    const feedbackQuestion = document.querySelectorAll('[data-input="question"]');
+    const feedbackInputs = [feedbackName, feedbackPhone, feedbackQuestion];
+    const feedbackSubmit = document.querySelectorAll('[data-input="submit"]');
 
-  const clearStorage = () => {
-    localStorage.clear();
-  };
+    const changeHandler = (element) => () => {
+      localStorage.setItem(element.name, element.value);
+    };
 
-  const changeHandler = () => {
-    if (this.type !== 'checkbox') {
-      localStorage.setItem(this.name, this.value);
-    } else {
-      localStorage.setItem(this.name, this.checked);
-    }
-  };
-
-  const checkStorage = () => {
-    for (let i = 0; i < formFields.length; i++) {
-      if (formFields[i].type === 'checked') {
-        formFields[i].checked = localStorage.getItem(formFields[i].name);
-      } else {
-        formFields[i].value = localStorage.getItem(formFields[i].name);
+    const attachEvents = () => {
+      for (let i = 0; i < feedbackInputs.length; i++) {
+        for (let j = 0; j < feedbackInputs[i].length; j++) {
+          feedbackInputs[i][j].addEventListener('change', changeHandler(feedbackInputs[i][j]));
+        }
       }
+    };
+
+    const checkStorage = () => {
+      for (let i = 0; i < feedbackInputs.length; i++) {
+        for (let j = 0; j < feedbackInputs[i].length; j++) {
+          feedbackInputs[i][j].value = localStorage.getItem(feedbackInputs[i][j].name);
+        }
+      }
+
+      attachEvents();
+    };
+
+    checkStorage();
+
+    const clearStorage = () => {
+      localStorage.clear();
+    };
+
+    for (let i = 0; i < feedbackSubmit.length; i++) {
+      feedbackSubmit[i].addEventListener('click', clearStorage);
     }
-
-    attachEvents();
-  };
-
-  const attachEvents = () => {
-    for (let i = 0; i < formFields.length; i++) {
-      formFields[i].addEventListener('change', changeHandler);
-    }
-  };
-
-  checkStorage();
+  }
 
   // Адаптивный JS
   const breakpoint = window.matchMedia('(max-width:767px)');
@@ -182,7 +174,9 @@ window.addEventListener('DOMContentLoaded', () => {
     if (callbackBtn) {
       callbackBtn.addEventListener('click', function () {
         const inputName = modalCallback.querySelector('[data-input="name"]');
-        inputName.focus();
+        setTimeout(() => {
+          inputName.focus();
+        }, 100);
       });
     }
   });

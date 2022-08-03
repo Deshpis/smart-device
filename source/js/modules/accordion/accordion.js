@@ -37,7 +37,6 @@ export class ItcAccordion {
     elBody.style.transition = `height ${this._config.duration}ms ease`;
     elBody.classList.add('collapsing');
     el.classList.add('accordion__item--slidedown');
-    // elBody.offsetHeight;
     elBody.style.height = `${height}px`;
     window.setTimeout(() => {
       elBody.classList.remove('collapsing');
@@ -56,7 +55,6 @@ export class ItcAccordion {
       return;
     }
     elBody.style.height = `${elBody.offsetHeight}px`;
-    // elBody.offsetHeight;
     elBody.style.display = 'block';
     elBody.style.height = 0;
     elBody.style.overflow = 'hidden';

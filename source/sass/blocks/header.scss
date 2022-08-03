@@ -1,5 +1,7 @@
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   color: $color-alice-blue;
   background-color: $color-black-pearl;
@@ -8,19 +10,15 @@
   &::after {
     position: absolute;
     content: "";
+    bottom: -9px;
     width: 100%;
     height: 10px;
     background: linear-gradient(180deg, $color-black-pearl 10%, $color-transparent 90%);
   }
 }
 
-.header--is-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 .header__wrapper {
+  position: relative;
   margin: 0 auto;
   max-width: 1220px;
   padding: 30px;
