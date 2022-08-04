@@ -82,6 +82,7 @@
   top: 0;
   left: 0;
   color: $color-default-white;
+  overflow: auto;
 
   @include vp-1023 {
     padding-top: 37px;

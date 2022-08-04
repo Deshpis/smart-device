@@ -2,6 +2,7 @@
   display: block;
   width: 215px;
   height: 55px;
+  flex-shrink: 0;
 
   @include vp-767 {
     width: 35px;

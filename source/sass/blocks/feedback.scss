@@ -44,7 +44,7 @@
   max-width: 1220px;
   background-image: url("../img/decorative/airplane.png");
   background-repeat: no-repeat;
-  background-size: 340px auto;
+  background-size: 37% auto;
   background-position: 0 80px;
   z-index: 2;
 
@@ -57,6 +57,10 @@
 
     @supports (background-image: url("../img/decorative/airplane@2x.webp")) {
       background-image: url("../img/decorative/airplane@2x.webp");
+
+      @include vp-1023 {
+        background-image: none;
+      }
     }
   }
 

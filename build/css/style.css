@@ -900,8 +900,18 @@ button,
   background-image: url("../img/svg/phone.svg");
 }
 
+.header__inner {
+  max-width: 250px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+}
+
 .header__callback {
   margin-top: 5px;
+  min-width: 160px;
   border-color: #f2f5f7;
 }
 
@@ -909,6 +919,8 @@ button,
   display: block;
   width: 215px;
   height: 55px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .logo[href] {
@@ -1045,6 +1057,10 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .footer__accordion a {
@@ -1389,6 +1405,7 @@ button,
   top: 0;
   left: 0;
   color: #ffffff;
+  overflow: auto;
 }
 
 .service-card--production {
@@ -1453,7 +1470,7 @@ button,
   max-width: 1220px;
   background-image: url("../img/decorative/airplane.png");
   background-repeat: no-repeat;
-  background-size: 340px auto;
+  background-size: 37% auto;
   background-position: 0 80px;
   z-index: 2;
 }
@@ -1514,7 +1531,10 @@ button,
   border: none;
   border-radius: 3px;
   font-weight: 700;
-  color: #ffffff;
+  color: #f2f5f7;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .feedback-form input::-webkit-input-placeholder,
@@ -1577,6 +1597,9 @@ button,
   border-color: #041827;
   font-size: 16px;
   line-height: 19px;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
 }
 
 .feedback-form__question,
@@ -1764,6 +1787,16 @@ button,
 
   .service-card:hover::after {
     opacity: 0.7;
+  }
+
+  .feedback-form input:hover,
+  .feedback-form textarea:hover {
+    opacity: 0.8;
+  }
+
+  .feedback-form input:focus,
+  .feedback-form textarea:focus {
+    opacity: 1;
   }
 
   .feedback-form__consent:hover,
@@ -2668,5 +2701,11 @@ button,
     .feedback__wrapper {
       background-image: url("../img/decorative/airplane@2x.webp");
     }
+
+@media (max-width: 1023px) {
+      .feedback__wrapper {
+        background-image: none;
+      }
+}
 }
 }

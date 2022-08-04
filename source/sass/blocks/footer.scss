@@ -138,6 +138,7 @@
 
 .footer__nav {
   display: flex;
+  user-select: none;
 
   @include vp-1023 {
     flex-direction: column;

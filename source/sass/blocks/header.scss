@@ -136,8 +136,16 @@
   background-image: url("../img/svg/phone.svg");
 }
 
+.header__inner {
+  max-width: 250px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+}
+
 .header__callback {
   margin-top: 5px;
+  min-width: 160px;
   border-color: $color-alice-blue;
 
   @include vp-1023 {

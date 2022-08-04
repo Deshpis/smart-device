@@ -29,7 +29,9 @@
           <a class="header__mail" href="mailto:info@sd.ru">info@sd.ru</a>
           <a class="header__phone" href="tel:+74950005252">+7 (495) 000 52 52</a>
         </div>
-        <a class="header__callback btn" href="#" data-open-modal="callback">Заказать звонок</a>
+        <div class="header__inner">
+          <a class="header__callback btn" href="#" data-open-modal="callback">Заказать звонок</a>
+        </div>
       </div>
     </header>
     <main class="page__main main">
@@ -128,23 +130,23 @@
             <form class="feedback__form feedback-form" action="https://echo.htmlacademy.ru/" method="post" data-form="feedback">
               <label>
                 <span class="visually-hidden">Введите имя</span>
-                <input type="text" name="name" placeholder="Имя" required data-input="name">
+                <input type="text" name="name" placeholder="Имя" minlength="2" required data-input="name">
               </label>
               <label>
                 <span class="visually-hidden">Введите номер телефона</span>
-                <input type="text" name="phone" placeholder="Телефон" required data-input="phone">
+                <input type="tel" name="phone" placeholder="Телефон" pattern="\+7\s?[\(]{0,1}[0-9]{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required data-input="phone">
               </label>
               <label class="feedback-form__question">
                 <span class="visually-hidden">Введите Ваш вопрос</span>
                 <textarea name="question" placeholder="Ваш вопрос" data-input="question"></textarea>
               </label>
               <div class="feedback-form__submit">
-                <button class="feedback-form__btn btn" type="submit" data-input="submit">Задать вопрос</button>
                 <label class="feedback-form__consent">
                   <input class="visually-hidden feedback-form__consent-input" type="checkbox" name="consent" checked required>
                   <span class="feedback-form__consent-icon"></span>
                   <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
                 </label>
+                <button class="feedback-form__btn btn" type="submit" data-input="submit">Задать вопрос</button>
               </div>
             </form>
           </div>
@@ -237,11 +239,11 @@
           <form class="modal__form feedback-form feedback-form--modal" action="https://echo.htmlacademy.ru/" method="post" data-form="feedback">
             <label>
               <span class="visually-hidden">Введите имя</span>
-              <input class="feedback-name" type="text" name="name" placeholder="Имя" required data-input="name">
+              <input class="feedback-name" type="text" name="name" placeholder="Имя" minlength="2" required data-input="name">
             </label>
             <label>
               <span class="visually-hidden">Введите номер телефона</span>
-              <input type="text" name="phone" placeholder="Телефон" required data-input="phone">
+              <input type="text" name="phone" placeholder="Телефон" pattern="\+7\s?[\(]{0,1}[0-9]{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required data-input="phone">
             </label>
             <label class="feedback-form__question">
               <span class="visually-hidden">Введите Ваш вопрос</span>

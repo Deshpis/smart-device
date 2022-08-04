@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (pos < 3) {
           event.preventDefault();
         }
-        let matrix = '+7 (___) ___-__-__';
+        let matrix = '+7(___)___-__-__';
         let i = 0;
         let def = matrix.replace(/\D/g, '');
         let val = input.value.replace(/\D/g, '');
