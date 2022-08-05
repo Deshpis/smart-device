@@ -71,13 +71,12 @@
   @include vp-1023 {
     padding: 80px 50px;
     padding-bottom: 206px;
-    max-width: 770px;
   }
 
   @include vp-767 {
     padding: 80px 25px;
     padding-bottom: 191px;
-    max-width: 320px;
+    min-width: 320px;
   }
 }
 

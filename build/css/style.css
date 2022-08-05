@@ -866,6 +866,7 @@ button,
   display: grid;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
   gap: 30px;
   width: 420px;
 }
@@ -1089,6 +1090,9 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .footer__nav-column--left {
@@ -1103,6 +1107,9 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .footer__contacts p {
@@ -1276,7 +1283,7 @@ button,
 }
 
 .company__more {
-  margin-top: 40px;
+  margin-top: 25px;
   padding-top: 15px;
   padding-bottom: 15px;
   width: 180px;
@@ -1284,23 +1291,12 @@ button,
   color: #00b2ff;
 }
 
+.company__toggle:focus ~ .company__more {
+  outline: 2px solid #000000;
+  outline-offset: -1px;
+}
+
 .company__toggle:checked ~ .company__description-hidden {
-  display: block;
-}
-
-.company__description--closed .company__more--opened {
-  display: block;
-}
-
-.company__description--closed .company__more--closed {
-  display: none;
-}
-
-.company__description--opened .company__more--opened {
-  display: none;
-}
-
-.company__description--opened .company__more--closed {
   display: block;
 }
 
@@ -1441,7 +1437,7 @@ button,
 .feedback {
   position: relative;
   padding: 170px 30px;
-  padding-bottom: 244px;
+  padding-bottom: 248px;
   color: #ffffff;
   background-color: #00b2ff;
   overflow: hidden;
@@ -1619,7 +1615,7 @@ button,
 
 .feedback-form__consent {
   position: relative;
-  margin-top: 9px;
+  margin-top: 16px;
   padding-left: 27px;
   cursor: pointer;
   -webkit-transition: opacity 0.3s ease;
@@ -1628,6 +1624,7 @@ button,
 }
 
 .feedback-form__consent span {
+  display: block;
   font-size: 14px;
   line-height: 16px;
   opacity: 0.8;
@@ -1638,12 +1635,21 @@ button,
   display: block;
   width: 16px;
   height: 16px;
-  top: 10px;
+  top: 50%;
   left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   background-image: url("../img/svg/consent-unchecked.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.feedback-form__consent-icon--modal {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 .feedback-form__consent-input {
@@ -1688,6 +1694,7 @@ button,
 
 .callback {
   padding-top: 37px;
+  padding-bottom: 45px;
   top: 87px;
   left: 49.5%;
   -webkit-transform: translate(-50%);
@@ -1871,8 +1878,11 @@ button,
     padding: 0 24px;
   }
 
+  .header {
+    position: relative;
+  }
+
   .header__wrapper {
-    max-width: 770px;
     padding-top: 20px;
     padding-bottom: 25px;
     padding-left: 50px;
@@ -1921,7 +1931,6 @@ button,
   .promo__wrapper {
     padding: 80px 50px;
     padding-bottom: 206px;
-    max-width: 770px;
   }
 
   .promo h2 {
@@ -1945,7 +1954,6 @@ button,
     padding-right: 45px;
     padding-bottom: 60px;
     padding-left: 50px;
-    max-width: 770px;
   }
 
   .footer__accordion {
@@ -1986,7 +1994,6 @@ button,
 
   .advantages {
     padding: 0 50px;
-    max-width: 770px;
   }
 
   .advantages__list {
@@ -2018,7 +2025,6 @@ button,
 
   .company {
     padding: 0 50px;
-    max-width: 770px;
   }
 
   .company__year {
@@ -2041,10 +2047,6 @@ button,
   .services {
     padding: 55px 50px;
     padding-bottom: 75px;
-  }
-
-  .services__wrapper {
-    max-width: 670px;
   }
 
   .services h2 {
@@ -2104,7 +2106,7 @@ button,
 
   .feedback {
     padding: 45px 50px;
-    padding-bottom: 121px;
+    padding-bottom: 125px;
   }
 
   .feedback::before {
@@ -2112,7 +2114,6 @@ button,
   }
 
   .feedback__wrapper {
-    max-width: 670px;
     background-image: none;
   }
 
@@ -2141,6 +2142,10 @@ button,
     margin-top: 3px;
     margin-right: 85px;
     padding: 12px 25px;
+  }
+
+  .feedback-form__consent {
+    margin-top: 13px;
   }
 
   .main__promo {
@@ -2217,11 +2222,11 @@ button,
   }
 
   .header__wrapper {
-    max-width: 320px;
     padding-top: 10px;
     padding-left: 25px;
     padding-right: 35px;
     padding-bottom: 20px;
+    min-width: 320px;
   }
 
   .header__logo {
@@ -2246,7 +2251,7 @@ button,
   .promo__wrapper {
     padding: 80px 25px;
     padding-bottom: 191px;
-    max-width: 320px;
+    min-width: 320px;
   }
 
   .promo h2 {
@@ -2290,7 +2295,7 @@ button,
 
   .footer__accordion-column {
     margin: 0 auto;
-    max-width: 320px;
+    min-width: 320px;
   }
 
   .footer__logo {
@@ -2401,7 +2406,7 @@ button,
 
   .advantages {
     padding: 0 25px;
-    max-width: 320px;
+    min-width: 320px;
   }
 
   .advantages__list {
@@ -2447,7 +2452,7 @@ button,
 
   .company {
     padding: 0 25px;
-    max-width: 320px;
+    min-width: 320px;
   }
 
   .company__year {
@@ -2486,7 +2491,7 @@ button,
   }
 
   .services__wrapper {
-    max-width: 270px;
+    min-width: 270px;
   }
 
   .services h2 {
@@ -2550,11 +2555,11 @@ button,
 
   .feedback {
     padding: 47px 25px;
-    padding-bottom: 81px;
+    padding-bottom: 91px;
   }
 
   .feedback__wrapper {
-    max-width: 270px;
+    min-width: 270px;
   }
 
   .feedback h2 {
@@ -2606,7 +2611,7 @@ button,
   }
 
   .main__company {
-    margin-bottom: 82px;
+    margin-bottom: 80px;
   }
 }
 

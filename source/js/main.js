@@ -58,20 +58,19 @@ window.addEventListener('DOMContentLoaded', () => {
   // Смена кнопки в блоке "О компании"
 
   const companyDescription = document.querySelector('[data-element="company-description"]');
-  const companyButtons = document.querySelectorAll('[data-element="company-more"]');
+  const companyToggle = companyDescription.querySelector('[data-element="company-toggle"]');
+  const companyBtnMore = companyDescription.querySelector('[data-element="company-more"]');
 
-  if (companyDescription) {
-    companyButtons.forEach((btn) => {
-      btn.addEventListener('click', function () {
-        if (companyDescription.classList.contains('company__description--closed')) {
-          companyDescription.classList.remove('company__description--closed');
-          companyDescription.classList.add('company__description--opened');
-        } else {
-          companyDescription.classList.add('company__description--closed');
-          companyDescription.classList.remove('company__description--opened');
-        }
-      });
-    });
+  const changeToggleText = () => {
+    if (companyToggle.checked) {
+      companyBtnMore.innerText = 'СКРЫТЬ';
+    } else {
+      companyBtnMore.innerText = 'ПОДРОБНЕЕ';
+    }
+  };
+
+  if (companyToggle) {
+    companyToggle.addEventListener('change', changeToggleText);
   }
 
   // Сохранение формы в localstorage
@@ -119,9 +118,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Адаптивный JS
-  const breakpoint = window.matchMedia('(max-width:767px)');
+  const mobileWidth = window.matchMedia('(max-width:767px)');
+
   const breakpointChecker = () => {
-    if (breakpoint.matches) {
+    if (mobileWidth.matches) {
       // Смена кнопки в .promo
       const promoButton = document.querySelector('[data-element="get-consult"]');
 
@@ -158,7 +158,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   };
-  breakpoint.addListener(breakpointChecker);
+  mobileWidth.addListener(breakpointChecker);
   breakpointChecker();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'

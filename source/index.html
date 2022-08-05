@@ -82,8 +82,8 @@
             <img src="img/content/company-year-2022.png" srcset="img/content/company-year-2022@2x.png 2x" width="151" height="323" alt="2022 год.">
           </picture>
         </div>
-        <div class="company__description company__description--closed" data-element="company-description">
-          <input class="company__toggle" id="company" type="checkbox">
+        <div class="company__description" data-element="company-description">
+          <input class="company__toggle" id="company" type="checkbox" data-element="company-toggle">
           <h2>О&nbsp;компании</h2>
           <p>
             Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997&nbsp;года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10&nbsp;дней.
@@ -97,7 +97,6 @@
             <p>Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
           </div>
           <label class="company__more company__more--opened btn" for="company" data-element="company-more">Подробнее</label>
-          <label class="company__more company__more--closed btn" for="company" data-element="company-more">Скрыть</label>
         </div>
       </section>
       <section class="main__services services">
@@ -249,13 +248,13 @@
               <span class="visually-hidden">Введите Ваш вопрос</span>
               <textarea name="question" placeholder="Ваш вопрос" data-input="question"></textarea>
             </label>
-            <div class="feedback-form__submit ">
-              <button class="feedback-form__btn btn" type="submit" data-input="submit">Отправить</button>
+            <div class="feedback-form__submit">
               <label class="feedback-form__consent">
                 <input class="visually-hidden feedback-form__consent-input" type="checkbox" name="consent" checked required>
-                <span class="feedback-form__consent-icon"></span>
+                <span class="feedback-form__consent-icon feedback-form__consent-icon--modal"></span>
                 <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
               </label>
+              <button class="feedback-form__btn btn" type="submit" data-input="submit">Отправить</button>
             </div>
           </form>
           <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>

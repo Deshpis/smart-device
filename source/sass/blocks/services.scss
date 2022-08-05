@@ -24,12 +24,8 @@
   margin: 0 auto;
   max-width: 1220px;
 
-  @include vp-1023 {
-    max-width: 670px;
-  }
-
   @include vp-767 {
-    max-width: 270px;
+    min-width: 270px;
   }
 }
 
